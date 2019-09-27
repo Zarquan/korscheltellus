@@ -37,8 +37,8 @@
 
     - name: "Deploy our Kafka compose file"
       template:
-        src:  kafka/kafka-compose.yml
-        dest: kafka-compose.yml
+        src:  'kafka/kafka-compose.yml.j2'
+        dest: 'kafka-compose.yml'
       vars:
         mntpath: '/data-vdc'
         logpath: '/data-vdc'
@@ -48,7 +48,7 @@
         project_src:
             '.'
         files:
-          - kafka-compose.yml
+          - 'kafka-compose.yml'
         services:
           - emily
         state:

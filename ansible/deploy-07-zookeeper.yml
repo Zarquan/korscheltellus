@@ -32,15 +32,15 @@
 
     - name: "Deploy our Zookeeper compose file"
       template:
-        src:  zookeeper/zookeeper-compose.yml
-        dest: zookeeper-compose.yml
+        src:  'zookeeper/zookeeper-compose.yml.j2'
+        dest: 'zookeeper-compose.yml'
 
     - name: "Start our Zookeeper services"
       docker_compose:
         project_src:
             '.'
         files:
-          - zookeeper-compose.yml
+          - 'zookeeper-compose.yml'
         services:
           - courtney
         state:

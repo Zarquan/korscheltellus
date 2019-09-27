@@ -31,7 +31,6 @@ topiclist=(
 topicfoo="${topiclist[@]}"
 topicbar=${topicfoo// /,}
 
-
 #
 # Stop the MirrorMaker process.
 docker-compose \

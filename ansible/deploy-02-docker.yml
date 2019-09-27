@@ -51,9 +51,9 @@
     become: true
     command:
       argv:
-        - 'dnf',
-        - 'config-manager',
-        - '--add-repo',
+        - 'dnf'
+        - 'config-manager'
+        - '--add-repo'
         - 'https://download.docker.com/linux/fedora/docker-ce.repo'
 
   - name: "Check Docker-CE is installed"

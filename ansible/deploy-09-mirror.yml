@@ -30,34 +30,34 @@
 
   vars:
     numstreams: 4
-#   ztfconnect: "public.alerts.ztf.uw.edu:9092"
-    ztfconnect: "Stedigo.esperia:9092"
+    ztfconnect: "public.alerts.ztf.uw.edu:9092"
+#   ztfconnect: "Stedigo.esperia:9092"
     roegroupid: "{{ groups['mirrors'][0] | lower }}.ztf-mirror.roe.ac.uk"
     roeconnect: "{{ groups['kafkas'] | join(':9092,') }}:9092"
     topicdate:  "{{ ansible_date_time.year }}{{ ansible_date_time.month }}{{ ansible_date_time.day }}"
-#   topiclist: [
-#       "ztf_{{ topicdate }}_programid1",
-#       "ztf_{{ topicdate }}_programid3_public"
-#       ]
     topiclist: [
-        "ztf_20190920_programid1"
+        "ztf_{{ topicdate }}_programid1",
+        "ztf_{{ topicdate }}_programid3_public"
         ]
+#   topiclist: [
+#       "ztf_20190920_programid1"
+#       ]
 
   tasks:
 
     - name: "Deploy our MirrorMaker producer config"
       template:
-        src:  'mirror/producer.config'
+        src:  'mirror/producer.config.j2'
         dest: 'producer.config'
 
     - name: "Deploy our MirrorMaker consumer config"
       template:
-        src:  'mirror/consumer.config'
+        src:  'mirror/consumer.config.j2'
         dest: 'consumer.config'
 
     - name: "Deploy our MirrorMaker compose file"
       template:
-        src:  'mirror/mirror-compose.yml'
+        src:  'mirror/mirror-compose.yml.j2'
         dest: 'mirror-compose.yml'
 
     - name: "Start our MirrorMaker services"

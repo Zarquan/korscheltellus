@@ -28,12 +28,12 @@
   gather_facts: false
 
   vars:
-    numpart: '5'
+    numpart: 5
     devpath: '/dev/sdb'
 
   tasks:
 
-    - name: "List the current partitions"
+    - name: "List the current partitions on {{ devpath }}"
       become: true
       parted:
         device: '{{ devpath }}'
@@ -43,7 +43,7 @@
     - debug:
         msg: "Partitions {{ sdb_info }}"
 
-    - name: "Remove all the current partitions"
+    - name: "Remove all the partitions from {{ devpath }}"
       become: true
       parted:
         device: '{{ devpath }}'
@@ -64,7 +64,7 @@
         part_end:   '{{ ((item + 1) * (100/numpart)) | int }}%'
       loop: '{{ range(0,numpart) | list }}'
 
-    - name: "List the current partitions"
+    - name: "List the current partitions on {{ devpath }}"
       become: true
       parted:
         device: /dev/sdb
