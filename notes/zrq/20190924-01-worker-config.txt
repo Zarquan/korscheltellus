@@ -49,26 +49,24 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-001.yml
 
---START--
-PLAY [dockers] ****....
-
-TASK [Check we can connect] ****....
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? fatal: [Ocelisean]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
-fatal: [Araeri]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
-fatal: [Nyderrad]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
-fatal: [Rhoawien]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
-fatal: [Gwirabard]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
---END--
+    >   PLAY [dockers] ****....
+    >   
+    >   TASK [Check we can connect] ****....
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   Are you sure you want to continue connecting (yes/no/[fingerprint])? fatal: [Ocelisean]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
+    >   fatal: [Araeri]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
+    >   fatal: [Nyderrad]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
+    >   fatal: [Rhoawien]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
+    >   fatal: [Gwirabard]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange", "unreachable": true}
 
     #
     # Need to accept the host keys before we can run Ansible scripts.
@@ -86,14 +84,12 @@ fatal: [Gwirabard]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect
         hostname
         '
 
---START--
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).
-Wed 25 Sep 15:22:31 BST 2019
-lssthead
---END--
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    >   Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).
+    >   Wed 25 Sep 15:22:31 BST 2019
+    >   lssthead
 
 
 # -----------------------------------------------------
@@ -115,14 +111,12 @@ lssthead
         hostname
         '
 
---START--
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '192.41.108.44' (ECDSA) to the list of known hosts.
-Wed 25 Sep 15:24:13 BST 2019
-lssthead
---END--
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    >   Warning: Permanently added '192.41.108.44' (ECDSA) to the list of known hosts.
+    >   Wed 25 Sep 15:24:13 BST 2019
+    >   lssthead
 
 
 # -----------------------------------------------------
@@ -137,10 +131,8 @@ lssthead
         hostname
         '
 
---START--
-Wed 25 Sep 15:24:53 BST 2019
-lssthead
---END--
+    >   Wed 25 Sep 15:24:53 BST 2019
+    >   lssthead
 
 
 # -----------------------------------------------------
@@ -151,8 +143,6 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-001.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -163,8 +153,6 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-002.yml
 
---START--
---END--
 
 
 
@@ -185,8 +173,6 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-004.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -197,8 +183,6 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-006.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -209,8 +193,6 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-007.yml
 
---START--
---END--
 
 
 
@@ -230,6 +212,4 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-003.yml
 
---START--
---END--
 

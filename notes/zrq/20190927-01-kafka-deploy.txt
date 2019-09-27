@@ -31,20 +31,18 @@
             list \
                 --all
 
---START--
- Id    Name                           State
-----------------------------------------------------
- 15    Ocelisean                      running
- 16    Araeri                         running
- 17    Nyderrad                       running
- 23    Glaubard                       running
- 24    Legendamwen                    running
- 37    Rhoawien                       running
- 38    Gwirabard                      running
- 39    Boasien                        running
- 40    Falidon                        running
- 41    Brawia                         running
---END--
+    >    Id    Name                           State
+    >   ----------------------------------------------------
+    >    15    Ocelisean                      running
+    >    16    Araeri                         running
+    >    17    Nyderrad                       running
+    >    23    Glaubard                       running
+    >    24    Legendamwen                    running
+    >    37    Rhoawien                       running
+    >    38    Gwirabard                      running
+    >    39    Boasien                        running
+    >    40    Falidon                        running
+    >    41    Brawia                         running
 
 
 # -----------------------------------------------------
@@ -74,96 +72,94 @@
 
         done
 
---START--
-vmname [Ocelisean]
-Domain Ocelisean destroyed
-
-Domain Ocelisean has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Ocelisean.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Ocelisean.iso) removed.
-
----- ----
-vmname [Araeri]
-Domain Araeri destroyed
-
-Domain Araeri has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Araeri.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Araeri.iso) removed.
-
----- ----
-vmname [Nyderrad]
-Domain Nyderrad destroyed
-
-Domain Nyderrad has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Nyderrad.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Nyderrad.iso) removed.
-
----- ----
-vmname [Glaubard]
-Domain Glaubard destroyed
-
-Domain Glaubard has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Glaubard.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Glaubard.iso) removed.
-
----- ----
-vmname [Legendamwen]
-Domain Legendamwen destroyed
-
-Domain Legendamwen has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Legendamwen.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Legendamwen.iso) removed.
-
----- ----
-vmname [Rhoawien]
-Domain Rhoawien destroyed
-
-error: Storage volume 'vdc'(/dev/sdb1) is not managed by libvirt. Remove it manually.
-
-Domain Rhoawien has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Rhoawien.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Rhoawien.iso) removed.
-
----- ----
-vmname [Gwirabard]
-Domain Gwirabard destroyed
-
-error: Storage volume 'vdc'(/dev/sdb2) is not managed by libvirt. Remove it manually.
-
-Domain Gwirabard has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Gwirabard.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Gwirabard.iso) removed.
-
----- ----
-vmname [Boasien]
-Domain Boasien destroyed
-
-error: Storage volume 'vdc'(/dev/sdb3) is not managed by libvirt. Remove it manually.
-
-Domain Boasien has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Boasien.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Boasien.iso) removed.
-
----- ----
-vmname [Falidon]
-Domain Falidon destroyed
-
-error: Storage volume 'vdc'(/dev/sdb4) is not managed by libvirt. Remove it manually.
-
-Domain Falidon has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Falidon.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Falidon.iso) removed.
-
----- ----
-vmname [Brawia]
-Domain Brawia destroyed
-
-error: Storage volume 'vdc'(/dev/sdb5) is not managed by libvirt. Remove it manually.
-
-Domain Brawia has been undefined
-Volume 'vda'(/var/lib/libvirt/images/live/Brawia.qcow) removed.
-Volume 'vdb'(/var/lib/libvirt/images/init/Brawia.iso) removed.
---END--
+    >   vmname [Ocelisean]
+    >   Domain Ocelisean destroyed
+    >   
+    >   Domain Ocelisean has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Ocelisean.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Ocelisean.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Araeri]
+    >   Domain Araeri destroyed
+    >   
+    >   Domain Araeri has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Araeri.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Araeri.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Nyderrad]
+    >   Domain Nyderrad destroyed
+    >   
+    >   Domain Nyderrad has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Nyderrad.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Nyderrad.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Glaubard]
+    >   Domain Glaubard destroyed
+    >   
+    >   Domain Glaubard has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Glaubard.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Glaubard.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Legendamwen]
+    >   Domain Legendamwen destroyed
+    >   
+    >   Domain Legendamwen has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Legendamwen.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Legendamwen.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Rhoawien]
+    >   Domain Rhoawien destroyed
+    >   
+    >   error: Storage volume 'vdc'(/dev/sdb1) is not managed by libvirt. Remove it manually.
+    >   
+    >   Domain Rhoawien has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Rhoawien.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Rhoawien.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Gwirabard]
+    >   Domain Gwirabard destroyed
+    >   
+    >   error: Storage volume 'vdc'(/dev/sdb2) is not managed by libvirt. Remove it manually.
+    >   
+    >   Domain Gwirabard has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Gwirabard.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Gwirabard.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Boasien]
+    >   Domain Boasien destroyed
+    >   
+    >   error: Storage volume 'vdc'(/dev/sdb3) is not managed by libvirt. Remove it manually.
+    >   
+    >   Domain Boasien has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Boasien.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Boasien.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Falidon]
+    >   Domain Falidon destroyed
+    >   
+    >   error: Storage volume 'vdc'(/dev/sdb4) is not managed by libvirt. Remove it manually.
+    >   
+    >   Domain Falidon has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Falidon.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Falidon.iso) removed.
+    >   
+    >   ---- ----
+    >   vmname [Brawia]
+    >   Domain Brawia destroyed
+    >   
+    >   error: Storage volume 'vdc'(/dev/sdb5) is not managed by libvirt. Remove it manually.
+    >   
+    >   Domain Brawia has been undefined
+    >   Volume 'vda'(/var/lib/libvirt/images/live/Brawia.qcow) removed.
+    >   Volume 'vdb'(/var/lib/libvirt/images/init/Brawia.iso) removed.
 
 
 # -----------------------------------------------------
@@ -173,123 +169,103 @@ Volume 'vdb'(/var/lib/libvirt/images/init/Brawia.iso) removed.
 
     createvm
 
---START--
-INFO : Node name [Ocelisean]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Ocelisean.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Ocelisean]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Ocelisean.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Araeri]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Araeri.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Araeri]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Araeri.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Nyderrad]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Nyderrad.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Nyderrad]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Nyderrad.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Rhoawien]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Rhoawien.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Rhoawien]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Rhoawien.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Gwirabard]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Gwirabard.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Gwirabard]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Gwirabard.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Boasien]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Boasien.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Boasien]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Boasien.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Falidon]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Falidon.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Falidon]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Falidon.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Brawia]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Brawia.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Brawia]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Brawia.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Glaubard]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Glaubard.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Glaubard]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Glaubard.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
     createvm
 
---START--
-INFO : Node name [Legendamwen]
-INFO : Base name [fedora-30-docker-base-20190903.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
-INFO : Disc name [Legendamwen.qcow]
-INFO : Disc size [16GiB]
-....
-....
---END--
+    >   INFO : Node name [Legendamwen]
+    >   INFO : Base name [fedora-30-docker-base-20190903.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-30-docker-base-20190903.qcow]
+    >   INFO : Disc name [Legendamwen.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
+    >   ....
 
 
 # -----------------------------------------------------
@@ -303,20 +279,18 @@ INFO : Disc size [16GiB]
             list \
                 --all
 
---START--
- Id    Name                           State
-----------------------------------------------------
- 42    Ocelisean                      running
- 43    Araeri                         running
- 44    Nyderrad                       running
- 45    Rhoawien                       running
- 46    Gwirabard                      running
- 47    Boasien                        running
- 48    Falidon                        running
- 49    Brawia                         running
- 50    Glaubard                       running
- 51    Legendamwen                    running
---END--
+    >    Id    Name                           State
+    >   ----------------------------------------------------
+    >    42    Ocelisean                      running
+    >    43    Araeri                         running
+    >    44    Nyderrad                       running
+    >    45    Rhoawien                       running
+    >    46    Gwirabard                      running
+    >    47    Boasien                        running
+    >    48    Falidon                        running
+    >    49    Brawia                         running
+    >    50    Glaubard                       running
+    >    51    Legendamwen                    running
 
 
 # -----------------------------------------------------
@@ -359,14 +333,12 @@ INFO : Disc size [16GiB]
         hostname
         '
 
---START--
-The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
-ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '192.41.108.44' (ECDSA) to the list of known hosts.
-Fri 27 Sep 19:19:32 BST 2019
-lssthead
---END--
+    >   The authenticity of host '192.41.108.44 (192.41.108.44)' can't be established.
+    >   ECDSA key fingerprint is SHA256:jCWHt7d/fVNH0VBOpuR+OZgxmPDaF4/9b9te7kPLo7E.
+    >   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    >   Warning: Permanently added '192.41.108.44' (ECDSA) to the list of known hosts.
+    >   Fri 27 Sep 19:19:32 BST 2019
+    >   lssthead
 
 
 # -----------------------------------------------------
@@ -377,20 +349,18 @@ lssthead
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-01-ping.yml
 
---START--
-....
-TASK [Check we can connect]
-ok: [Ocelisean]
-ok: [Nyderrad]
-....
-....
-
-TASK [Check we can use sudo]
-ok: [Ocelisean]
-ok: [Araeri]
-....
-....
---END--
+    >   ....
+    >   TASK [Check we can connect]
+    >   ok: [Ocelisean]
+    >   ok: [Nyderrad]
+    >   ....
+    >   ....
+    >   
+    >   TASK [Check we can use sudo]
+    >   ok: [Ocelisean]
+    >   ok: [Araeri]
+    >   ....
+    >   ....
 
 
 # -----------------------------------------------------
@@ -402,47 +372,45 @@ ok: [Araeri]
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-02-docker.yml
 
---START--
-....
-TASK [Remove Fedora Docker packages]
-changed: [Gwirabard]
-changed: [Rhoawien]
-....
-....
-
-TASK [Check dnf-plugins-core is installed]
-ok: [Araeri]
-ok: [Nyderrad]
-....
-....
-
-TASK [Add the Docker-CE dnf repository]
- [WARNING]: Consider using the dnf module rather than running 'dnf'.  If you need to use command because dnf is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of
-this message.
-
-changed: [Ocelisean]
-changed: [Rhoawien]
-....
-....
-
-TASK [Check Docker-CE is installed]
-changed: [Nyderrad]
-changed: [Araeri]
-....
-....
-
-TASK [Check Docker service is enabled and started]
-changed: [Ocelisean]
-changed: [Araeri]
-....
-....
-
-TASK [Install Python Docker libraries for Ansible to use]
-changed: [Nyderrad]
-changed: [Ocelisean]
-....
-....
---END--
+    >   ....
+    >   TASK [Remove Fedora Docker packages]
+    >   changed: [Gwirabard]
+    >   changed: [Rhoawien]
+    >   ....
+    >   ....
+    >   
+    >   TASK [Check dnf-plugins-core is installed]
+    >   ok: [Araeri]
+    >   ok: [Nyderrad]
+    >   ....
+    >   ....
+    >   
+    >   TASK [Add the Docker-CE dnf repository]
+    >    [WARNING]: Consider using the dnf module rather than running 'dnf'.  If you need to use command because dnf is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of
+    >   this message.
+    >   
+    >   changed: [Ocelisean]
+    >   changed: [Rhoawien]
+    >   ....
+    >   ....
+    >   
+    >   TASK [Check Docker-CE is installed]
+    >   changed: [Nyderrad]
+    >   changed: [Araeri]
+    >   ....
+    >   ....
+    >   
+    >   TASK [Check Docker service is enabled and started]
+    >   changed: [Ocelisean]
+    >   changed: [Araeri]
+    >   ....
+    >   ....
+    >   
+    >   TASK [Install Python Docker libraries for Ansible to use]
+    >   changed: [Nyderrad]
+    >   changed: [Ocelisean]
+    >   ....
+    >   ....
 
 
 # -----------------------------------------------------
@@ -453,121 +421,119 @@ changed: [Ocelisean]
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-03-parted.yml
 
---START--
-....
-TASK [List the current partitions on /dev/sdb]
-ok: [work01]
-
-TASK [debug]
-ok: [work01] => {
-    "msg": "
-        Partitions {
-            'changed': False,
-            'disk': {
-                'dev': '/dev/sdb',
-                'size': 7452.0,
-                'unit': 'gib',
-                'table': 'gpt',
-                'model': 'ATA HGST HUS728T8TAL',
-                'logical_block': 512,
-                'physical_block': 4096
-                },
-            'partitions': [],
-            'script': \"unit 'GiB' print\",
-            'ansible_facts': {
-                'discovered_interpreter_python': '/usr/bin/python3'
-                },
-            'failed': False
-            }
-        "
-    }
-
-TASK [Remove all the partitions from /dev/sdb]
-
-TASK [Create new partitions sdb-[1-5]]
-changed: [work01] => (item=0)
-changed: [work01] => (item=1)
-changed: [work01] => (item=2)
-changed: [work01] => (item=3)
-changed: [work01] => (item=4)
-
-TASK [List the current partitions on /dev/sdb]
-ok: [work01]
-
-TASK [debug]
-ok: [work01] => {
-    "msg": "
-        Partitions {
-            'changed': False,
-            'disk': {
-                'dev': '/dev/sdb',
-                'size': 7452.0,
-                'unit': 'gib',
-                'table': 'gpt',
-                'model': 'ATA HGST HUS728T8TAL',
-                'logical_block': 512,
-                'physical_block': 4096
-                },
-            'partitions':
-                [
-                    {
-                    'num': 1,
-                    'begin': 0.0,
-                    'end': 1490.0,
-                    'size': 1490.0,
-                    'fstype': 'btrfs',
-                    'name': 'sdb-1',
-                    'flags': [],
-                    'unit': 'gib'
-                    },
-                    {
-                    'num': 2,
-                    'begin': 1490.0,
-                    'end': 2981.0,
-                    'size': 1490.0,
-                    'fstype': 'btrfs',
-                    'name': 'sdb-2',
-                    'flags': [],
-                    'unit': 'gib'
-                    },
-                    {
-                    'num': 3,
-                    'begin': 2981.0,
-                    'end': 4471.0,
-                    'size': 1490.0,
-                    'fstype': 'btrfs',
-                    'name': 'sdb-3',
-                    'flags': [],
-                    'unit': 'gib'
-                    },
-                    {
-                    'num': 4,
-                    'begin': 4471.0,
-                    'end': 5962.0,
-                    'size': 1490.0,
-                    'fstype': 'btrfs',
-                    'name': 'sdb-4',
-                    'flags': [],
-                    'unit': 'gib'
-                    },
-                    {
-                    'num': 5,
-                    'begin': 5962.0,
-                    'end': 7452.0,
-                    'size': 1490.0,
-                    'fstype': 'btrfs',
-                    'name': 'sdb-5',
-                    'flags': [],
-                    'unit': 'gib'
-                    }
-                ],
-            'script': \"unit 'GiB' print\",
-            'failed': False
-            }
-        "
-    }
-....
---END--
+    >   ....
+    >   TASK [List the current partitions on /dev/sdb]
+    >   ok: [work01]
+    >   
+    >   TASK [debug]
+    >   ok: [work01] => {
+    >       "msg": "
+    >           Partitions {
+    >               'changed': False,
+    >               'disk': {
+    >                   'dev': '/dev/sdb',
+    >                   'size': 7452.0,
+    >                   'unit': 'gib',
+    >                   'table': 'gpt',
+    >                   'model': 'ATA HGST HUS728T8TAL',
+    >                   'logical_block': 512,
+    >                   'physical_block': 4096
+    >                   },
+    >               'partitions': [],
+    >               'script': \"unit 'GiB' print\",
+    >               'ansible_facts': {
+    >                   'discovered_interpreter_python': '/usr/bin/python3'
+    >                   },
+    >               'failed': False
+    >               }
+    >           "
+    >       }
+    >   
+    >   TASK [Remove all the partitions from /dev/sdb]
+    >   
+    >   TASK [Create new partitions sdb-[1-5]]
+    >   changed: [work01] => (item=0)
+    >   changed: [work01] => (item=1)
+    >   changed: [work01] => (item=2)
+    >   changed: [work01] => (item=3)
+    >   changed: [work01] => (item=4)
+    >   
+    >   TASK [List the current partitions on /dev/sdb]
+    >   ok: [work01]
+    >   
+    >   TASK [debug]
+    >   ok: [work01] => {
+    >       "msg": "
+    >           Partitions {
+    >               'changed': False,
+    >               'disk': {
+    >                   'dev': '/dev/sdb',
+    >                   'size': 7452.0,
+    >                   'unit': 'gib',
+    >                   'table': 'gpt',
+    >                   'model': 'ATA HGST HUS728T8TAL',
+    >                   'logical_block': 512,
+    >                   'physical_block': 4096
+    >                   },
+    >               'partitions':
+    >                   [
+    >                       {
+    >                       'num': 1,
+    >                       'begin': 0.0,
+    >                       'end': 1490.0,
+    >                       'size': 1490.0,
+    >                       'fstype': 'btrfs',
+    >                       'name': 'sdb-1',
+    >                       'flags': [],
+    >                       'unit': 'gib'
+    >                       },
+    >                       {
+    >                       'num': 2,
+    >                       'begin': 1490.0,
+    >                       'end': 2981.0,
+    >                       'size': 1490.0,
+    >                       'fstype': 'btrfs',
+    >                       'name': 'sdb-2',
+    >                       'flags': [],
+    >                       'unit': 'gib'
+    >                       },
+    >                       {
+    >                       'num': 3,
+    >                       'begin': 2981.0,
+    >                       'end': 4471.0,
+    >                       'size': 1490.0,
+    >                       'fstype': 'btrfs',
+    >                       'name': 'sdb-3',
+    >                       'flags': [],
+    >                       'unit': 'gib'
+    >                       },
+    >                       {
+    >                       'num': 4,
+    >                       'begin': 4471.0,
+    >                       'end': 5962.0,
+    >                       'size': 1490.0,
+    >                       'fstype': 'btrfs',
+    >                       'name': 'sdb-4',
+    >                       'flags': [],
+    >                       'unit': 'gib'
+    >                       },
+    >                       {
+    >                       'num': 5,
+    >                       'begin': 5962.0,
+    >                       'end': 7452.0,
+    >                       'size': 1490.0,
+    >                       'fstype': 'btrfs',
+    >                       'name': 'sdb-5',
+    >                       'flags': [],
+    >                       'unit': 'gib'
+    >                       }
+    >                   ],
+    >               'script': \"unit 'GiB' print\",
+    >               'failed': False
+    >               }
+    >           "
+    >       }
+    >   ....
 
 
 # -----------------------------------------------------
@@ -578,61 +544,59 @@ ok: [work01] => {
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-05-attach.yml
 
---START--
-....
-TASK [Attach discs to the Kafka VMs]
-included: /etc/ansible/libvirt-attach.yml for work01
-included: /etc/ansible/libvirt-attach.yml for work01
-included: /etc/ansible/libvirt-attach.yml for work01
-included: /etc/ansible/libvirt-attach.yml for work01
-included: /etc/ansible/libvirt-attach.yml for work01
-
-TASK [Shutdown VM Rhoawien]
-changed: [work01]
-
-TASK [Attach partition sdb1 to VM Rhoawien]
-changed: [work01]
-
-TASK [Start VM Rhoawien]
-changed: [work01]
-
-TASK [Shutdown VM Gwirabard]
-changed: [work01]
-
-TASK [Attach partition sdb2 to VM Gwirabard]
-changed: [work01]
-
-TASK [Start VM Gwirabard]
-changed: [work01]
-
-TASK [Shutdown VM Boasien]
-changed: [work01]
-
-TASK [Attach partition sdb3 to VM Boasien]
-changed: [work01]
-
-TASK [Start VM Boasien]
-changed: [work01]
-
-TASK [Shutdown VM Falidon]
-changed: [work01]
-
-TASK [Attach partition sdb4 to VM Falidon]
-changed: [work01]
-
-TASK [Start VM Falidon]
-changed: [work01]
-
-TASK [Shutdown VM Brawia]
-changed: [work01]
-
-TASK [Attach partition sdb5 to VM Brawia]
-changed: [work01]
-
-TASK [Start VM Brawia]
-changed: [work01]
-....
---END--
+    >   ....
+    >   TASK [Attach discs to the Kafka VMs]
+    >   included: /etc/ansible/libvirt-attach.yml for work01
+    >   included: /etc/ansible/libvirt-attach.yml for work01
+    >   included: /etc/ansible/libvirt-attach.yml for work01
+    >   included: /etc/ansible/libvirt-attach.yml for work01
+    >   included: /etc/ansible/libvirt-attach.yml for work01
+    >   
+    >   TASK [Shutdown VM Rhoawien]
+    >   changed: [work01]
+    >   
+    >   TASK [Attach partition sdb1 to VM Rhoawien]
+    >   changed: [work01]
+    >   
+    >   TASK [Start VM Rhoawien]
+    >   changed: [work01]
+    >   
+    >   TASK [Shutdown VM Gwirabard]
+    >   changed: [work01]
+    >   
+    >   TASK [Attach partition sdb2 to VM Gwirabard]
+    >   changed: [work01]
+    >   
+    >   TASK [Start VM Gwirabard]
+    >   changed: [work01]
+    >   
+    >   TASK [Shutdown VM Boasien]
+    >   changed: [work01]
+    >   
+    >   TASK [Attach partition sdb3 to VM Boasien]
+    >   changed: [work01]
+    >   
+    >   TASK [Start VM Boasien]
+    >   changed: [work01]
+    >   
+    >   TASK [Shutdown VM Falidon]
+    >   changed: [work01]
+    >   
+    >   TASK [Attach partition sdb4 to VM Falidon]
+    >   changed: [work01]
+    >   
+    >   TASK [Start VM Falidon]
+    >   changed: [work01]
+    >   
+    >   TASK [Shutdown VM Brawia]
+    >   changed: [work01]
+    >   
+    >   TASK [Attach partition sdb5 to VM Brawia]
+    >   changed: [work01]
+    >   
+    >   TASK [Start VM Brawia]
+    >   changed: [work01]
+    >   ....
 
 
 # -----------------------------------------------------
@@ -643,181 +607,179 @@ changed: [work01]
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-06-mount.yml
 
---START--
-....
-TASK [Create a btrfs filesystem on /dev/vdc]
-ok: [Falidon]
-ok: [Boasien]
-ok: [Gwirabard]
-ok: [Rhoawien]
-ok: [Brawia]
-
-TASK [Create the mount point /data-vdc]
-changed: [Falidon]
-changed: [Brawia]
-changed: [Boasien]
-changed: [Rhoawien]
-changed: [Gwirabard]
-
-TASK [Create the mount-failed indicator]
-changed: [Rhoawien]
-changed: [Gwirabard]
-changed: [Boasien]
-changed: [Falidon]
-changed: [Brawia]
-
-TASK [Mount device /dev/vdc as /data-vdc]
-changed: [Gwirabard]
-changed: [Falidon]
-changed: [Rhoawien]
-changed: [Boasien]
-changed: [Brawia]
-
-TASK [command]
-changed: [Gwirabard]
-changed: [Rhoawien]
-changed: [Falidon]
-changed: [Boasien]
-changed: [Brawia]
-
-TASK [debug]
-ok: [Rhoawien] => {
-    "msg": "
-        After space {
-            'cmd': [
-                'df',
-                '--human-readable',
-                '/data-vdc'
-                ],
-            'stdout': '
-                Filesystem      Size  Used Avail Use% Mounted on
-                /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
-                ',
-            'stderr': '',
-            'rc': 0,
-            'start': '2019-09-27 19:44:47.973601',
-            'end': '2019-09-27 19:44:47.979520',
-            'delta': '0:00:00.005919',
-            'changed': True,
-            'stdout_lines': [
-                'Filesystem      Size  Used Avail Use% Mounted on',
-                '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
-                ],
-            'stderr_lines': [],
-            'failed': False
-            }
-        "
-    }
-ok: [Gwirabard] => {
-    "msg": "
-        After space {
-            'cmd': [
-                'df',
-                '--human-readable',
-                '/data-vdc'
-                ],
-            'stdout': '
-                Filesystem      Size  Used Avail Use% Mounted on
-                /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
-                ',
-            'stderr': '',
-            'rc': 0,
-            'start': '2019-09-27 19:44:47.959271',
-            'end': '2019-09-27 19:44:47.969044',
-            'delta': '0:00:00.009773',
-            'changed': True,
-            'stdout_lines': [
-                'Filesystem      Size  Used Avail Use% Mounted on',
-                '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
-                ],
-            'stderr_lines': [],
-            'failed': False
-            }
-        "
-    }
-ok: [Boasien] => {
-    "msg": "
-        After space {
-            'cmd': [
-                'df',
-                '--human-readable',
-                '/data-vdc'
-                ],
-            'stdout': '
-                Filesystem      Size  Used Avail Use% Mounted on
-                /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
-                ',
-            'stderr': '',
-            'rc': 0,
-            'start': '2019-09-27 19:44:48.001851',
-            'end': '2019-09-27 19:44:48.011810',
-            'delta': '0:00:00.009959',
-            'changed': True,
-            'stdout_lines': [
-                'Filesystem      Size  Used Avail Use% Mounted on',
-                '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
-                ],
-            'stderr_lines': [],
-            'failed': False
-            }
-        "
-    }
-ok: [Falidon] => {
-    "msg": "
-        After space {
-            'cmd': [
-                'df',
-                '--human-readable',
-                '/data-vdc'
-                ],
-            'stdout': '
-                Filesystem      Size  Used Avail Use% Mounted on
-                /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
-                ',
-            'stderr': '',
-            'rc': 0,
-            'start': '2019-09-27 19:44:48.000225',
-            'end': '2019-09-27 19:44:48.010201',
-            'delta': '0:00:00.009976',
-            'changed': True,
-            'stdout_lines': [
-                'Filesystem      Size  Used Avail Use% Mounted on',
-                '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
-                ],
-            'stderr_lines': [],
-            'failed': False
-            }
-        "
-    }
-ok: [Brawia] => {
-    "msg": "
-        After space {
-            'cmd': [
-                'df',
-                '--human-readable',
-                '/data-vdc'
-                ],
-            'stdout': '
-                Filesystem      Size  Used Avail Use% Mounted on
-                /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
-                ',
-            'stderr': '',
-            'rc': 0,
-            'start': '2019-09-27 19:44:48.010259',
-            'end': '2019-09-27 19:44:48.021068',
-            'delta': '0:00:00.010809',
-            'changed': True,
-            'stdout_lines': [
-                'Filesystem      Size  Used Avail Use% Mounted on',
-                '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
-                ],
-           'stderr_lines': [],
-           'failed': False
-           }
-       "
-    }
-....
---END--
+    >   ....
+    >   TASK [Create a btrfs filesystem on /dev/vdc]
+    >   ok: [Falidon]
+    >   ok: [Boasien]
+    >   ok: [Gwirabard]
+    >   ok: [Rhoawien]
+    >   ok: [Brawia]
+    >   
+    >   TASK [Create the mount point /data-vdc]
+    >   changed: [Falidon]
+    >   changed: [Brawia]
+    >   changed: [Boasien]
+    >   changed: [Rhoawien]
+    >   changed: [Gwirabard]
+    >   
+    >   TASK [Create the mount-failed indicator]
+    >   changed: [Rhoawien]
+    >   changed: [Gwirabard]
+    >   changed: [Boasien]
+    >   changed: [Falidon]
+    >   changed: [Brawia]
+    >   
+    >   TASK [Mount device /dev/vdc as /data-vdc]
+    >   changed: [Gwirabard]
+    >   changed: [Falidon]
+    >   changed: [Rhoawien]
+    >   changed: [Boasien]
+    >   changed: [Brawia]
+    >   
+    >   TASK [command]
+    >   changed: [Gwirabard]
+    >   changed: [Rhoawien]
+    >   changed: [Falidon]
+    >   changed: [Boasien]
+    >   changed: [Brawia]
+    >   
+    >   TASK [debug]
+    >   ok: [Rhoawien] => {
+    >       "msg": "
+    >           After space {
+    >               'cmd': [
+    >                   'df',
+    >                   '--human-readable',
+    >                   '/data-vdc'
+    >                   ],
+    >               'stdout': '
+    >                   Filesystem      Size  Used Avail Use% Mounted on
+    >                   /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
+    >                   ',
+    >               'stderr': '',
+    >               'rc': 0,
+    >               'start': '2019-09-27 19:44:47.973601',
+    >               'end': '2019-09-27 19:44:47.979520',
+    >               'delta': '0:00:00.005919',
+    >               'changed': True,
+    >               'stdout_lines': [
+    >                   'Filesystem      Size  Used Avail Use% Mounted on',
+    >                   '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
+    >                   ],
+    >               'stderr_lines': [],
+    >               'failed': False
+    >               }
+    >           "
+    >       }
+    >   ok: [Gwirabard] => {
+    >       "msg": "
+    >           After space {
+    >               'cmd': [
+    >                   'df',
+    >                   '--human-readable',
+    >                   '/data-vdc'
+    >                   ],
+    >               'stdout': '
+    >                   Filesystem      Size  Used Avail Use% Mounted on
+    >                   /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
+    >                   ',
+    >               'stderr': '',
+    >               'rc': 0,
+    >               'start': '2019-09-27 19:44:47.959271',
+    >               'end': '2019-09-27 19:44:47.969044',
+    >               'delta': '0:00:00.009773',
+    >               'changed': True,
+    >               'stdout_lines': [
+    >                   'Filesystem      Size  Used Avail Use% Mounted on',
+    >                   '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
+    >                   ],
+    >               'stderr_lines': [],
+    >               'failed': False
+    >               }
+    >           "
+    >       }
+    >   ok: [Boasien] => {
+    >       "msg": "
+    >           After space {
+    >               'cmd': [
+    >                   'df',
+    >                   '--human-readable',
+    >                   '/data-vdc'
+    >                   ],
+    >               'stdout': '
+    >                   Filesystem      Size  Used Avail Use% Mounted on
+    >                   /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
+    >                   ',
+    >               'stderr': '',
+    >               'rc': 0,
+    >               'start': '2019-09-27 19:44:48.001851',
+    >               'end': '2019-09-27 19:44:48.011810',
+    >               'delta': '0:00:00.009959',
+    >               'changed': True,
+    >               'stdout_lines': [
+    >                   'Filesystem      Size  Used Avail Use% Mounted on',
+    >                   '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
+    >                   ],
+    >               'stderr_lines': [],
+    >               'failed': False
+    >               }
+    >           "
+    >       }
+    >   ok: [Falidon] => {
+    >       "msg": "
+    >           After space {
+    >               'cmd': [
+    >                   'df',
+    >                   '--human-readable',
+    >                   '/data-vdc'
+    >                   ],
+    >               'stdout': '
+    >                   Filesystem      Size  Used Avail Use% Mounted on
+    >                   /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
+    >                   ',
+    >               'stderr': '',
+    >               'rc': 0,
+    >               'start': '2019-09-27 19:44:48.000225',
+    >               'end': '2019-09-27 19:44:48.010201',
+    >               'delta': '0:00:00.009976',
+    >               'changed': True,
+    >               'stdout_lines': [
+    >                   'Filesystem      Size  Used Avail Use% Mounted on',
+    >                   '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
+    >                   ],
+    >               'stderr_lines': [],
+    >               'failed': False
+    >               }
+    >           "
+    >       }
+    >   ok: [Brawia] => {
+    >       "msg": "
+    >           After space {
+    >               'cmd': [
+    >                   'df',
+    >                   '--human-readable',
+    >                   '/data-vdc'
+    >                   ],
+    >               'stdout': '
+    >                   Filesystem      Size  Used Avail Use% Mounted on
+    >                   /dev/vdc        1.5T   18M  1.5T   1% /data-vdc
+    >                   ',
+    >               'stderr': '',
+    >               'rc': 0,
+    >               'start': '2019-09-27 19:44:48.010259',
+    >               'end': '2019-09-27 19:44:48.021068',
+    >               'delta': '0:00:00.010809',
+    >               'changed': True,
+    >               'stdout_lines': [
+    >                   'Filesystem      Size  Used Avail Use% Mounted on',
+    >                   '/dev/vdc        1.5T   18M  1.5T   1% /data-vdc'
+    >                   ],
+    >              'stderr_lines': [],
+    >              'failed': False
+    >              }
+    >          "
+    >       }
+    >   ....
 
 
 # -----------------------------------------------------
@@ -828,19 +790,17 @@ ok: [Brawia] => {
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-07-zookeeper.yml
 
---START--
-....
-TASK [Deploy our Zookeeper compose file]
-changed: [Ocelisean]
-changed: [Nyderrad]
-changed: [Araeri]
-
-TASK [Start our Zookeeper services]
-changed: [Nyderrad]
-changed: [Ocelisean]
-changed: [Araeri]
-....
---END--
+    >   ....
+    >   TASK [Deploy our Zookeeper compose file]
+    >   changed: [Ocelisean]
+    >   changed: [Nyderrad]
+    >   changed: [Araeri]
+    >   
+    >   TASK [Start our Zookeeper services]
+    >   changed: [Nyderrad]
+    >   changed: [Ocelisean]
+    >   changed: [Araeri]
+    >   ....
 
 
 # -----------------------------------------------------
@@ -851,23 +811,21 @@ changed: [Araeri]
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-08-kafka.yml
 
---START--
-....
-TASK [Deploy our Kafka compose file]
-changed: [Rhoawien]
-changed: [Boasien]
-changed: [Falidon]
-changed: [Brawia]
-changed: [Gwirabard]
-
-TASK [Start our Kafka services]
-changed: [Brawia]
-changed: [Boasien]
-changed: [Gwirabard]
-changed: [Rhoawien]
-changed: [Falidon]
-....
---END--
+    >   ....
+    >   TASK [Deploy our Kafka compose file]
+    >   changed: [Rhoawien]
+    >   changed: [Boasien]
+    >   changed: [Falidon]
+    >   changed: [Brawia]
+    >   changed: [Gwirabard]
+    >   
+    >   TASK [Start our Kafka services]
+    >   changed: [Brawia]
+    >   changed: [Boasien]
+    >   changed: [Gwirabard]
+    >   changed: [Rhoawien]
+    >   changed: [Falidon]
+    >   ....
 
 
 # -----------------------------------------------------
@@ -878,29 +836,27 @@ changed: [Falidon]
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-09-mirror.yml
 
---START--
-....
-TASK [Gathering Facts]
-ok: [Glaubard]
-ok: [Legendamwen]
-
-TASK [Deploy our MirrorMaker producer config]
-changed: [Legendamwen]
-changed: [Glaubard]
-
-TASK [Deploy our MirrorMaker consumer config]
-changed: [Glaubard]
-changed: [Legendamwen]
-
-TASK [Deploy our MirrorMaker compose file]
-changed: [Legendamwen]
-changed: [Glaubard]
-
-TASK [Start our MirrorMaker services]
-changed: [Glaubard]
-changed: [Legendamwen]
-....
---END--
+    >   ....
+    >   TASK [Gathering Facts]
+    >   ok: [Glaubard]
+    >   ok: [Legendamwen]
+    >   
+    >   TASK [Deploy our MirrorMaker producer config]
+    >   changed: [Legendamwen]
+    >   changed: [Glaubard]
+    >   
+    >   TASK [Deploy our MirrorMaker consumer config]
+    >   changed: [Glaubard]
+    >   changed: [Legendamwen]
+    >   
+    >   TASK [Deploy our MirrorMaker compose file]
+    >   changed: [Legendamwen]
+    >   changed: [Glaubard]
+    >   
+    >   TASK [Start our MirrorMaker services]
+    >   changed: [Glaubard]
+    >   changed: [Legendamwen]
+    >   ....
 
 
 # -----------------------------------------------------
@@ -911,33 +867,31 @@ changed: [Legendamwen]
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-10-cron.yml
 
---START--
-....
-TASK [Gathering Facts]
-ok: [Glaubard]
-ok: [Legendamwen]
-
-TASK [Check the cron daemon is installed]
-changed: [Legendamwen]
-changed: [Glaubard]
-
-TASK [Check the cron daemon is enabled and started]
-changed: [Glaubard]
-changed: [Legendamwen]
-
-TASK [Create the user's bin directory]
-changed: [Legendamwen]
-changed: [Glaubard]
-
-TASK [Deploy our topic update script]
-changed: [Glaubard]
-changed: [Legendamwen]
-
-TASK [Install our crontab entry]
-changed: [Legendamwen]
-changed: [Glaubard]
-....
---END--
+    >   ....
+    >   TASK [Gathering Facts]
+    >   ok: [Glaubard]
+    >   ok: [Legendamwen]
+    >   
+    >   TASK [Check the cron daemon is installed]
+    >   changed: [Legendamwen]
+    >   changed: [Glaubard]
+    >   
+    >   TASK [Check the cron daemon is enabled and started]
+    >   changed: [Glaubard]
+    >   changed: [Legendamwen]
+    >   
+    >   TASK [Create the user's bin directory]
+    >   changed: [Legendamwen]
+    >   changed: [Glaubard]
+    >   
+    >   TASK [Deploy our topic update script]
+    >   changed: [Glaubard]
+    >   changed: [Legendamwen]
+    >   
+    >   TASK [Install our crontab entry]
+    >   changed: [Legendamwen]
+    >   changed: [Glaubard]
+    >   ....
 
 
 

@@ -69,8 +69,6 @@
         hostname
         '
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -81,8 +79,6 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-001.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -93,8 +89,6 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-002.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -105,8 +99,6 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-004.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -117,8 +109,6 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-006.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -129,8 +119,6 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-007.yml
 
---START--
---END--
 
 
 # -----------------------------------------------------
@@ -141,6 +129,4 @@
         --inventory /etc/ansible/hosts.yml \
         /etc/ansible/deploy-008.yml
 
---START--
---END--
 
