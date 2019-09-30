@@ -27,7 +27,7 @@
 
 # -----------------------------------------------------
 # Check our client offsets in the ZTF broker.
-#[user@trop03]
+#[user@desktop]
 
     source "${HOME}/ssh-options"
 
@@ -56,7 +56,7 @@
     offsetcheck
 
     >   Fri 27 Sep 20:25:39 BST 2019
-    >   
+    >
     >   glaubard.ztf-mirror.roe.ac.uk ztf_20190927_programid1        0          -               0               -               glaubard.ztf-mirror.roe.ac.uk-0-63228751-7f82-48e5-92d0-13f088c79c3e /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
     >   glaubard.ztf-mirror.roe.ac.uk ztf_20190927_programid1        10         -               0               -               glaubard.ztf-mirror.roe.ac.uk-1-7ddf4277-d2de-4909-80ae-ffa61ddbd681 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
     >   glaubard.ztf-mirror.roe.ac.uk ztf_20190927_programid1        1          -               0               -               glaubard.ztf-mirror.roe.ac.uk-0-faa37d87-396c-43db-a250-448e58ce700a /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
@@ -86,13 +86,13 @@
     >   glaubard.ztf-mirror.roe.ac.uk ztf_20190927_programid3_public 8          -               0               -               glaubard.ztf-mirror.roe.ac.uk-3-91ae2a56-0b69-4747-8f2e-0d8e9d7f8c25 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
     >   glaubard.ztf-mirror.roe.ac.uk ztf_20190927_programid3_public 9          -               0               -               glaubard.ztf-mirror.roe.ac.uk-3-c5b97fc4-f29f-4934-8da3-b112e2c23b09 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
     >   GROUP                         TOPIC                          PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                          HOST            CLIENT-ID
-    >   
+    >
     >   Fri 27 Sep 20:25:49 BST 2019
 
 
 # -----------------------------------------------------
 # Check the disc space on each node.
-#[user@trop03]
+#[user@desktop]
 
     source "${HOME}/ssh-options"
 
@@ -148,6 +148,115 @@
     >   Fri 27 Sep 20:36:54 BST 2019
     >   Filesystem      Size  Used Avail Use% Mounted on
     >   /dev/vdc        1.5T   17M  1.5T   1% /data-vdc
+
+
+# -----------------------------------------------------
+# Check our client offsets in the ZTF broker.
+#[user@desktop]
+
+    offsetcheck
+
+--START--
+Sat 28 Sep 05:38:39 BST 2019
+
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        0          6689            6721            32              glaubard.ztf-mirror.roe.ac.uk-0-3a641cd6-e432-4530-b9ff-2a93b0fe5601 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        10         6687            6720            33              glaubard.ztf-mirror.roe.ac.uk-1-09db1bf7-4f16-4c30-8a8e-721c67e88a20 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        11         6693            6720            27              glaubard.ztf-mirror.roe.ac.uk-1-50720fe0-f914-4478-ae76-022db5e78d79 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        12         6693            6723            30              glaubard.ztf-mirror.roe.ac.uk-2-135255b9-dd2f-4a67-9bce-6c8bebd1df98 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        13         6690            6722            32              glaubard.ztf-mirror.roe.ac.uk-2-d66553ff-7090-4742-9729-f211d7216e76 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        1          6691            6720            29              glaubard.ztf-mirror.roe.ac.uk-0-e0af029e-5f06-4f41-9c00-1ba7808e6e13 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        2          6688            6720            32              glaubard.ztf-mirror.roe.ac.uk-1-09db1bf7-4f16-4c30-8a8e-721c67e88a20 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        3          6694            6720            26              glaubard.ztf-mirror.roe.ac.uk-1-50720fe0-f914-4478-ae76-022db5e78d79 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        4          6692            6722            30              glaubard.ztf-mirror.roe.ac.uk-2-135255b9-dd2f-4a67-9bce-6c8bebd1df98 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        5          6692            6722            30              glaubard.ztf-mirror.roe.ac.uk-2-d66553ff-7090-4742-9729-f211d7216e76 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        6          6689            6723            34              glaubard.ztf-mirror.roe.ac.uk-3-13c30eb7-ab82-4669-9a4e-16ad185b365b /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        7          6686            6722            36              glaubard.ztf-mirror.roe.ac.uk-3-5ae55217-7bfe-4c0e-97d4-a030807a493e /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        8          6689            6721            32              glaubard.ztf-mirror.roe.ac.uk-0-3a641cd6-e432-4530-b9ff-2a93b0fe5601 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid1        9          6692            6720            28              glaubard.ztf-mirror.roe.ac.uk-0-e0af029e-5f06-4f41-9c00-1ba7808e6e13 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 0          -               0               -               glaubard.ztf-mirror.roe.ac.uk-3-13c30eb7-ab82-4669-9a4e-16ad185b365b /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 10         -               0               -               glaubard.ztf-mirror.roe.ac.uk-0-3a641cd6-e432-4530-b9ff-2a93b0fe5601 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 1          -               0               -               glaubard.ztf-mirror.roe.ac.uk-3-5ae55217-7bfe-4c0e-97d4-a030807a493e /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 11         -               0               -               glaubard.ztf-mirror.roe.ac.uk-0-e0af029e-5f06-4f41-9c00-1ba7808e6e13 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 12         -               0               -               glaubard.ztf-mirror.roe.ac.uk-1-09db1bf7-4f16-4c30-8a8e-721c67e88a20 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 13         -               0               -               glaubard.ztf-mirror.roe.ac.uk-1-50720fe0-f914-4478-ae76-022db5e78d79 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 2          -               0               -               glaubard.ztf-mirror.roe.ac.uk-0-3a641cd6-e432-4530-b9ff-2a93b0fe5601 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 3          -               0               -               glaubard.ztf-mirror.roe.ac.uk-0-e0af029e-5f06-4f41-9c00-1ba7808e6e13 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 4          -               0               -               glaubard.ztf-mirror.roe.ac.uk-1-09db1bf7-4f16-4c30-8a8e-721c67e88a20 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 5          -               0               -               glaubard.ztf-mirror.roe.ac.uk-1-50720fe0-f914-4478-ae76-022db5e78d79 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 6          -               0               -               glaubard.ztf-mirror.roe.ac.uk-2-135255b9-dd2f-4a67-9bce-6c8bebd1df98 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 7          -               0               -               glaubard.ztf-mirror.roe.ac.uk-2-d66553ff-7090-4742-9729-f211d7216e76 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 8          -               0               -               glaubard.ztf-mirror.roe.ac.uk-3-13c30eb7-ab82-4669-9a4e-16ad185b365b /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20190928_programid3_public 9          -               0               -               glaubard.ztf-mirror.roe.ac.uk-3-5ae55217-7bfe-4c0e-97d4-a030807a493e /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+GROUP                         TOPIC                          PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                          HOST            CLIENT-ID
+
+Sat 28 Sep 05:38:54 BST 2019
+--END--
+
+
+# -----------------------------------------------------
+# Check the disc space on each node.
+#[user@desktop]
+
+    spacecheck
+
+--START--
+---- ----
+Rhoawien
+Sat 28 Sep 05:41:15 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.0G  1.5T   1% /data-vdc
+---- ----
+Gwirabard
+Sat 28 Sep 05:41:16 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.0G  1.5T   1% /data-vdc
+---- ----
+Boasien
+Sat 28 Sep 05:41:17 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.0G  1.5T   1% /data-vdc
+---- ----
+Falidon
+Sat 28 Sep 05:41:17 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.0G  1.5T   1% /data-vdc
+---- ----
+Brawia
+Sat 28 Sep 05:41:18 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.0G  1.5T   1% /data-vdc
+--END--
+
+
+    spacecheck
+
+--START--
+---- ----
+Rhoawien
+Sat 28 Sep 05:43:23 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.1G  1.5T   1% /data-vdc
+---- ----
+Gwirabard
+Sat 28 Sep 05:43:24 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.1G  1.5T   1% /data-vdc
+---- ----
+Boasien
+Sat 28 Sep 05:43:25 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.1G  1.5T   1% /data-vdc
+---- ----
+Falidon
+Sat 28 Sep 05:43:27 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.1G  1.5T   1% /data-vdc
+---- ----
+Brawia
+Sat 28 Sep 05:43:28 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T  4.1G  1.5T   1% /data-vdc
+--END--
 
 
 
