@@ -47,19 +47,18 @@
 #[user@desktop]
 
     source "${HOME}/korscheltellus.settings"
-    pushd  "${KORSCHELTELLUS_CODE:?}"
 
-        docker run \
-            --rm \
-            --tty \
-            --interactive \
-            --hostname ansible-client \
-            --env SSH_AUTH_SOCK=/tmp/ssh_auth_sock \
-            --volume ${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock \
-            --volume $(pwd)/ansible:/etc/ansible:ro \
-            --volume ${HOME}/.ssh/config:/tmp/ssh_config:ro \
-            atolmis/ansible-client:latest \
-                bash
+    docker run \
+        --rm \
+        --tty \
+        --interactive \
+        --hostname ansible-client \
+        --env SSH_AUTH_SOCK=/tmp/ssh_auth_sock \
+        --volume ${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock \
+        --volume ${KORSCHELTELLUS_CODE:?}/ansible:/etc/ansible:ro \
+        --volume ${HOME}/.ssh/config:/tmp/ssh_config:ro \
+        atolmis/ansible-client:latest \
+            bash
 
 
 # -----------------------------------------------------
@@ -111,22 +110,20 @@ lssthead
 # Run our Ansible client.
 #[user@desktop]
 
+    source "${HOME}/korscheltellus.settings"
     ESPERIA_USERNAME=dmr
 
-    source "${HOME}/korscheltellus.settings"
-    pushd  "${KORSCHELTELLUS_CODE:?}"
-
-        docker run \
-            --rm \
-            --tty \
-            --interactive \
-            --hostname ansible-client \
-            --env ESPERIA_USERNAME=${ESPERIA_USERNAME:?} \
-            --env SSH_AUTH_SOCK=/tmp/ssh_auth_sock \
-            --volume ${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock \
-            --volume $(pwd)/ansible:/etc/ansible:ro \
-            atolmis/ansible-client:latest \
-                bash
+    docker run \
+        --rm \
+        --tty \
+        --interactive \
+        --hostname ansible-client \
+        --env ESPERIA_USERNAME=${ESPERIA_USERNAME:?} \
+        --env SSH_AUTH_SOCK=/tmp/ssh_auth_sock \
+        --volume ${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock \
+        --volume ${KORSCHELTELLUS_CODE:?}/ansible:/etc/ansible:ro \
+        atolmis/ansible-client:latest \
+            bash
 
 
 # -----------------------------------------------------

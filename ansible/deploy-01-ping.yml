@@ -24,6 +24,18 @@
 #
 
 ---
+- hosts: workers
+  gather_facts: false
+
+  tasks:
+
+    - name: "Check we can connect"
+      ping:
+
+    - name: "Check we can use sudo"
+      become: true
+      ping:
+
 - hosts: dockers
   gather_facts: false
 

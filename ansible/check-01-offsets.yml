@@ -18,13 +18,31 @@
 #   </meta:licence>
 # </meta:header>
 #
+#
 
-[defaults]
 
-# https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html
-interpreter_python = auto
 
-# https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html#host-key-checking
-host_key_checking = False
+---
+- hosts: Glaubard
+  gather_facts: false
+  become: false
+  tasks:
 
+    - name: "Request our client offsets"
+      command:
+        argv:
+          - 'docker'
+          - 'run'
+          - '--rm'
+          - 'atolmis/kafka'
+          - 'bin/kafka-consumer-groups.sh'
+          - '--bootstrap-server'
+          - '{{ztfconnect}}'
+          - '--describe'
+          - '--group'
+          - '{{roegroupid}}'
+      register: offset_list
+
+    - debug:
+        msg: "Offsets {{offset_list}}"
 

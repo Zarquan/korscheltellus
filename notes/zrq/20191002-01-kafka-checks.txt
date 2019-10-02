@@ -1,0 +1,216 @@
+#
+# <meta:header>
+#   <meta:licence>
+#     Copyright (c) 2019, ROE (http://www.roe.ac.uk/)
+#
+#     This information is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This information is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#   </meta:licence>
+# </meta:header>
+#
+#
+
+# -----------------------------------------------------
+# Setup the node names.
+#[user@desktop]
+
+    unset mmnames
+    mmnames=(
+        Glaubard
+        Legendamwen
+        )
+
+    unset zknames
+    zknames=(
+        Ocelisean
+        Araeri
+        Nyderrad
+        )
+
+    unset kfnames
+    kfnames=(
+        Rhoawien
+        Gwirabard
+        Boasien
+        Falidon
+        Brawia
+        )
+
+
+# -----------------------------------------------------
+# Check our client offsets in the ZTF broker.
+#[user@desktop]
+
+    source "${HOME}/ssh-options"
+
+    ztfconnect=public.alerts.ztf.uw.edu:9092
+    roegroupid=${mmnames[0],,}.ztf-mirror.roe.ac.uk
+
+    offsetcheck()
+        {
+        date ; \
+        ssh \
+            ${sshopts[*]} \
+            ${sshuser:?}@${mmnames[0]:?} \
+            "
+            docker run --rm \
+                atolmis/kafka \
+                    bin/kafka-consumer-groups.sh \
+                        --bootstrap-server "${ztfconnect:?}" \
+                        --describe \
+                        --group "${roegroupid:?}"
+             " \
+        | sort \
+        ; date
+        }
+
+    offsetcheck
+
+--START--
+Wed  2 Oct 12:26:48 BST 2019
+
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        0          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        10         7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        11         7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        12         7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        13         7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        1          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        2          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        3          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        4          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        5          7120            7120            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        6          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        7          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        8          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191001_programid1        9          7121            7121            0               -                                                                    -               -
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        0          9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-0-413fcf46-e13a-4feb-bef9-82a5197bda15 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        10         9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-1-a118b164-1c39-4b56-8272-eb149df29e47 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        11         9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-1-fb46a416-c10d-4453-b131-f3469b80beca /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        12         9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-2-7d81578b-edc9-4565-bcd9-fe1a873ef8d4 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        13         9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-2-95fe02b2-c69d-4fc1-8a30-d20aaffd1252 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        1          9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-0-739360e2-c8df-48e1-8fa4-33dc05b6b576 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        2          9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-1-a118b164-1c39-4b56-8272-eb149df29e47 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        3          9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-1-fb46a416-c10d-4453-b131-f3469b80beca /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        4          9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-2-7d81578b-edc9-4565-bcd9-fe1a873ef8d4 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        5          9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-2-95fe02b2-c69d-4fc1-8a30-d20aaffd1252 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        6          9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-3-31dba5c3-2ff5-45ef-a6ad-f91049b0de3f /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        7          9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-3-6cb85cd5-977d-42e5-969b-a092d74573bb /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        8          9594            9594            0               glaubard.ztf-mirror.roe.ac.uk-0-413fcf46-e13a-4feb-bef9-82a5197bda15 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid1        9          9595            9595            0               glaubard.ztf-mirror.roe.ac.uk-0-739360e2-c8df-48e1-8fa4-33dc05b6b576 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 0          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-3-31dba5c3-2ff5-45ef-a6ad-f91049b0de3f /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 10         6043            6043            0               glaubard.ztf-mirror.roe.ac.uk-0-413fcf46-e13a-4feb-bef9-82a5197bda15 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 11         6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-0-739360e2-c8df-48e1-8fa4-33dc05b6b576 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 12         6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-1-a118b164-1c39-4b56-8272-eb149df29e47 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 13         6043            6043            0               glaubard.ztf-mirror.roe.ac.uk-1-fb46a416-c10d-4453-b131-f3469b80beca /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 1          6043            6043            0               glaubard.ztf-mirror.roe.ac.uk-3-6cb85cd5-977d-42e5-969b-a092d74573bb /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 2          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-0-413fcf46-e13a-4feb-bef9-82a5197bda15 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 3          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-0-739360e2-c8df-48e1-8fa4-33dc05b6b576 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-0
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 4          6043            6043            0               glaubard.ztf-mirror.roe.ac.uk-1-a118b164-1c39-4b56-8272-eb149df29e47 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 5          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-1-fb46a416-c10d-4453-b131-f3469b80beca /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-1
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 6          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-2-7d81578b-edc9-4565-bcd9-fe1a873ef8d4 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 7          6043            6043            0               glaubard.ztf-mirror.roe.ac.uk-2-95fe02b2-c69d-4fc1-8a30-d20aaffd1252 /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-2
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 8          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-3-31dba5c3-2ff5-45ef-a6ad-f91049b0de3f /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+glaubard.ztf-mirror.roe.ac.uk ztf_20191002_programid3_public 9          6042            6042            0               glaubard.ztf-mirror.roe.ac.uk-3-6cb85cd5-977d-42e5-969b-a092d74573bb /192.41.108.44  glaubard.ztf-mirror.roe.ac.uk-3
+GROUP                         TOPIC                          PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                                          HOST            CLIENT-ID
+Wed  2 Oct 12:27:00 BST 2019
+--END--
+
+
+# -----------------------------------------------------
+# Check the disc space on each node.
+#[user@desktop]
+
+    source "${HOME}/ssh-options"
+
+    spacecheck()
+        {
+        for vmname in ${kfnames[@]}
+            do
+                echo "---- ----"
+                ssh \
+                    ${sshopts[*]} \
+                    ${sshuser:?}@${vmname:?} \
+                        "
+                        hostname
+                        date
+                        df -h /data*
+                        "
+            done
+        }
+
+    spacecheck
+
+--START--
+---- ----
+Rhoawien
+Wed  2 Oct 12:27:21 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T   29G  1.5T   2% /data-vdc
+---- ----
+Gwirabard
+Wed  2 Oct 12:27:22 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T   29G  1.5T   2% /data-vdc
+---- ----
+Boasien
+Wed  2 Oct 12:27:23 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T   29G  1.5T   2% /data-vdc
+---- ----
+Falidon
+Wed  2 Oct 12:27:24 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T   29G  1.5T   2% /data-vdc
+---- ----
+Brawia
+Wed  2 Oct 12:27:25 BST 2019
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdc        1.5T   29G  1.5T   2% /data-vdc
+--END--
+
+
+# -----------------------------------------------------
+# List the topics in our service.
+#[user@mmnames[0]]
+
+    topiclist()
+        {
+        date ; \
+        ssh \
+            ${sshopts[*]} \
+            ${sshuser:?}@${mmnames[0]:?} \
+            "
+            docker run --rm \
+                atolmis/kafka \
+                    bin/kafka-topics.sh \
+                        --zookeeper "${zknames[0]}" \
+                        --list \
+             " \
+        | sort | tee /tmp/topiclist \
+        ; date
+        }
+
+    topiclist
+
+--START--
+Wed  2 Oct 12:30:11 BST 2019
+__confluent.support.metrics
+ztf_20190928_programid1
+ztf_20190930_programid1
+ztf_20191001_programid1
+ztf_20191002_programid1
+ztf_20191002_programid3_public
+Wed  2 Oct 12:30:16 BST 2019
+--END--
+
+
