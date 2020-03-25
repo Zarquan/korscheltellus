@@ -1,0 +1,327 @@
+#
+# <meta:header>
+#   <meta:licence>
+#     Copyright (c) 2019, ROE (http://www.roe.ac.uk/)
+#
+#     This information is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This information is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#   </meta:licence>
+# </meta:header>
+#
+#
+
+    # How does Apache Kafka use open file descriptors?
+    # https://stackoverflow.com/questions/49188071/how-does-apache-kafka-use-open-file-descriptors
+
+    # Kafka optimization
+    # https://dattell.com/data-architecture-blog/apache-kafka-optimization/
+
+    # How many partitions are needed
+    # https://dattell.com/data-architecture-blog/kafka-optimization-how-many-partitions-are-needed/
+
+    # “Max open files” for working process
+    # https://stackoverflow.com/questions/3734932/max-open-files-for-working-process
+
+    # Limits
+    # https://linux.die.net/man/5/limits.conf
+    # https://linux.die.net/man/1/bash
+
+
+
+
+
+
+# -----------------------------------------------------
+# Setup the node names.
+#[user@desktop]
+
+    unset mmnames
+    mmnames=(
+        Glaubard
+        Legendamwen
+        )
+
+    unset zknames
+    zknames=(
+        Ocelisean
+        Araeri
+        Nyderrad
+        )
+
+    unset kfnames
+    kfnames=(
+        Rhoawien
+        Gwirabard
+        Boasien
+        Falidon
+        Brawia
+        )
+
+# -----------------------------------------------------
+# Loginm to a worker VM.
+#[user@virtual]
+
+    ssh \
+        ${sshopts[*]} \
+        ${sshuser:?}@${kfnames[0]}
+
+
+# -----------------------------------------------------
+# Check the file descriptor limits for our user.
+#[user@virtual]
+
+        # Soft limit
+        ulimit -Sn
+
+        >   1024
+
+        # Hard limit
+        ulimit -Hn
+
+        >   524288
+
+
+# -----------------------------------------------------
+# Check the file descriptor limits inside our container.
+#[user@virtual]
+
+    docker ps -a
+
+--START--
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS                              NAMES
+abb0be14bd6a        confluentinc/cp-kafka:4.1.1   "/etc/confluent/dock…"   2 weeks ago         Up 2 weeks          0.0.0.0:9092-9093->9092-9093/tcp   stevedore_emily_1
+--END--
+
+    docker exec -it stevedore_emily_1 bash
+
+        # Soft limit
+        ulimit -Sn
+
+        >   1048576
+
+        # Hard limit
+        ulimit -Hn
+
+        >   1048576
+
+    # Is this because we are root inside the container ?
+
+
+# -----------------------------------------------------
+# Check the file descriptor limits for root user.
+#[user@virtual]
+
+        # Soft limit
+        sudo ulimit -Sn
+
+        >   1024
+
+        # Hard limit
+        sudo ulimit -Hn
+
+        >   524288
+
+    # The root account has normal limits
+    # The container has increased limits.
+
+
+# -----------------------------------------------------
+# List the open the file descriptors on the virtual machine.
+# https://www.cyberciti.biz/tips/linux-procfs-file-descriptors.html
+#[user@virtual]
+
+    sudo dnf install lsof
+
+--START--
+....
+Installed:
+  lsof-4.91-3.fc30.x86_64
+--END--
+
+
+    lsof | wc -l
+
+--START--
+lsof: WARNING: can't stat() tmpfs file system /var/lib/docker/containers/abb0be14bd6aba6ff1c485f67c4c753247f68532ec0ba92df222e4041770379b/mounts/shm
+      Output information may be incomplete.
+lsof: WARNING: can't stat() nsfs file system /run/docker/netns/f1912b246b67
+      Output information may be incomplete.
+1308
+--END--
+
+
+# -----------------------------------------------------
+# List the open the file descriptors inside our container.
+#[user@virtual]
+
+    docker exec -it stevedore_emily_1 bash
+
+        apt-get update
+        apt-get install lsof
+
+        lsof | wc -l
+
+--START--
+1100115
+--END--
+
+
+        lsof
+
+--START--
+COMMAND PID TID USER   FD   TYPE             DEVICE  SIZE/OFF    NODE NAME
+java      1     root  cwd    DIR               0,61       168     256 /
+java      1     root  rtd    DIR               0,61       168     256 /
+java      1     root  txt    REG               0,61      7526    9482 /usr/lib/jvm/zulu-8-amd64/bin/java
+java      1     root  mem    REG               0,40              9482 /usr/lib/jvm/zulu-8-amd64/bin/java (path dev=0,61)
+java      1     root  mem    REG               0,52            455476 /data-vdc/ztf_20191010_programid3_public-75/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455475 /data-vdc/ztf_20191010_programid3_public-75/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455471 /data-vdc/ztf_20191010_programid3_public-82/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455470 /data-vdc/ztf_20191010_programid3_public-82/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455466 /data-vdc/ztf_20191010_programid3_public-52/00000000000000000176.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455465 /data-vdc/ztf_20191010_programid3_public-52/00000000000000000176.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455461 /data-vdc/ztf_20191010_programid3_public-51/00000000000000000176.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455460 /data-vdc/ztf_20191010_programid3_public-51/00000000000000000176.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455456 /data-vdc/ztf_20191010_programid3_public-55/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455455 /data-vdc/ztf_20191010_programid3_public-55/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455451 /data-vdc/ztf_20191010_programid3_public-62/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455450 /data-vdc/ztf_20191010_programid3_public-62/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455446 /data-vdc/ztf_20191010_programid3_public-59/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455445 /data-vdc/ztf_20191010_programid3_public-59/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455441 /data-vdc/ztf_20191010_programid3_public-66/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455440 /data-vdc/ztf_20191010_programid3_public-66/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455436 /data-vdc/ztf_20191010_programid3_public-64/00000000000000000178.timeindex (path dev=0,53)
+java      1     root  mem    REG               0,52            455435 /data-vdc/ztf_20191010_programid3_public-64/00000000000000000178.index (path dev=0,53)
+java      1     root  mem    REG               0,52            455431 /data-vdc/ztf_20191010_programid3_public-63/00000000000000000178.timeindex (path dev=0,53)
+....
+....
+java      1 194 root 5163u   REG               0,53         0  455521 /data-vdc/ztf_20191010_programid3_public-31/00000000000000000178.log
+java      1 194 root 5164u   REG               0,53         0  455525 /data-vdc/ztf_20191010_programid3_public-32/00000000000000000178.log
+java      1 194 root 5165u   REG               0,53         0  455533 /data-vdc/ztf_20191010_programid3_public-27/00000000000000000178.log
+java      1 194 root 5166u   REG               0,53         0  455538 /data-vdc/ztf_20191010_programid3_public-28/00000000000000000178.log
+java      1 194 root 5167u   REG               0,53         0  455543 /data-vdc/ztf_20191010_programid3_public-22/00000000000000000178.log
+java      1 194 root 5168u   REG               0,53         0  455548 /data-vdc/ztf_20191010_programid3_public-23/00000000000000000178.log
+java      1 194 root 5169u   REG               0,53         0  455553 /data-vdc/ztf_20191010_programid3_public-19/00000000000000000176.log
+java      1 194 root 5170u   REG               0,53         0  455558 /data-vdc/ztf_20191010_programid3_public-47/00000000000000000178.log
+java      1 194 root 5171u   REG               0,53         0  455563 /data-vdc/ztf_20191010_programid3_public-48/00000000000000000178.log
+java      1 194 root 5172u   REG               0,53         0  455568 /data-vdc/ztf_20191010_programid3_public-50/00000000000000000178.log
+java      1 194 root 5173u   REG               0,53         0  455573 /data-vdc/ztf_20191010_programid3_public-44/00000000000000000177.log
+java      1 194 root 5174u   REG               0,53         0  455578 /data-vdc/ztf_20191010_programid3_public-46/00000000000000000177.log
+java      1 194 root 5175u   REG               0,53         0  455583 /data-vdc/ztf_20191010_programid3_public-39/00000000000000000178.log
+java      1 194 root 5176u   REG               0,53         0  455588 /data-vdc/ztf_20191010_programid3_public-35/00000000000000000176.log
+java      1 194 root 5177u   REG               0,53         0  455593 /data-vdc/ztf_20191010_programid3_public-37/00000000000000000178.log
+java      1 194 root 5178u   REG               0,53         0  455598 /data-vdc/ztf_20191010_programid3_public-255/00000000000000000177.log
+java      1 194 root 5179u   REG               0,53         0  455603 /data-vdc/ztf_20191010_programid3_public-250/00000000000000000176.log
+java      1 194 root 5180u   REG               0,53         0  455608 /data-vdc/ztf_20191010_programid3_public-251/00000000000000000177.log
+java      1 194 root 5181u   REG               0,53         0  455613 /data-vdc/ztf_20191010_programid3_public-252/00000000000000000178.log
+java      1 194 root 5182u   REG               0,53         0  455618 /data-vdc/ztf_20191010_programid3_public-15/00000000000000000178.log
+java      1 194 root 5183u   REG               0,53         0  455623 /data-vdc/ztf_20191010_programid3_public-12/00000000000000000178.log
+java      1 194 root 5184u   REG               0,53         0  455628 /data-vdc/ztf_20191010_programid3_public-6/00000000000000000178.log
+java      1 194 root 5185u   REG               0,53         0  455633 /data-vdc/ztf_20191010_programid3_public-7/00000000000000000177.log
+java      1 194 root 5186u   REG               0,53         0  455639 /data-vdc/ztf_20191010_programid3_public-8/00000000000000000176.log
+java      1 194 root 5187u   REG               0,53         0  455644 /data-vdc/ztf_20191010_programid3_public-2/00000000000000000176.log
+java      1 194 root 5188u   REG               0,53         0  455649 /data-vdc/ztf_20191010_programid3_public-3/00000000000000000177.log
+java      1 194 root 5189u   REG               0,53         0  455654 /data-vdc/ztf_20191010_programid3_public-4/00000000000000000178.log
+java      1 194 root 5190u   REG               0,53         0  455659 /data-vdc/ztf_20191010_programid3_public-228/00000000000000000178.log
+java      1 194 root 5191u   REG               0,53         0  455664 /data-vdc/ztf_20191010_programid3_public-230/00000000000000000178.log
+java      1 194 root 5192u   REG               0,53         0  455669 /data-vdc/ztf_20191010_programid3_public-231/00000000000000000178.log
+java      1 194 root 5193u   REG               0,53         0  455674 /data-vdc/ztf_20191010_programid3_public-224/00000000000000000178.log
+java      1 194 root 5194u   REG               0,53         0  455679 /data-vdc/ztf_20191010_programid3_public-226/00000000000000000178.log
+java      1 194 root 5195u   REG               0,53         0  455684 /data-vdc/ztf_20191010_programid3_public-227/00000000000000000178.log
+java      1 194 root 5196u   REG               0,53         0  455689 /data-vdc/ztf_20191010_programid3_public-222/00000000000000000177.log
+java      1 194 root 5197u   REG               0,53         0  455694 /data-vdc/ztf_20191010_programid3_public-217/00000000000000000176.log
+java      1 194 root 5198u   REG               0,53         0  455699 /data-vdc/ztf_20191010_programid3_public-219/00000000000000000178.log
+java      1 194 root 5199u   REG               0,53         0  455704 /data-vdc/ztf_20191010_programid3_public-246/00000000000000000178.log
+java      1 194 root 5200u   REG               0,53         0  455709 /data-vdc/ztf_20191010_programid3_public-247/00000000000000000178.log
+java      1 194 root 5201u   REG               0,53         0  455714 /data-vdc/ztf_20191010_programid3_public-242/00000000000000000178.log
+java      1 194 root 5202u   REG               0,53         0  455719 /data-vdc/ztf_20191010_programid3_public-244/00000000000000000177.log
+java      1 194 root 5203u   REG               0,53         0  455724 /data-vdc/ztf_20191010_programid3_public-237/00000000000000000178.log
+java      1 194 root 5204u   REG               0,53         0  455729 /data-vdc/ztf_20191010_programid3_public-232/00000000000000000176.log
+java      1 194 root 5205u   REG               0,53         0  455734 /data-vdc/ztf_20191010_programid3_public-235/00000000000000000178.log
+bash    213     root  cwd    DIR               0,61       168     256 /
+bash    213     root  rtd    DIR               0,61       168     256 /
+bash    213     root  txt    REG               0,61   1029624     260 /bin/bash
+bash    213     root  mem    REG               0,40               260 /bin/bash (path dev=0,61)
+bash    213     root  mem    REG               0,40              1193 /lib/x86_64-linux-gnu/libnss_files-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1197 /lib/x86_64-linux-gnu/libnss_nis-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1187 /lib/x86_64-linux-gnu/libnsl-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1189 /lib/x86_64-linux-gnu/libnss_compat-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1148 /lib/x86_64-linux-gnu/libc-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1161 /lib/x86_64-linux-gnu/libdl-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1233 /lib/x86_64-linux-gnu/libtinfo.so.5.9 (path dev=0,61)
+bash    213     root  mem    REG               0,40              1184 /lib/x86_64-linux-gnu/libncurses.so.5.9 (path dev=0,61)
+bash    213     root  mem    REG               0,40              1130 /lib/x86_64-linux-gnu/ld-2.19.so (path dev=0,61)
+bash    213     root  mem    REG               0,40              1679 /usr/lib/locale/C.UTF-8/LC_CTYPE (path dev=0,61)
+bash    213     root  mem    REG               0,40              1686 /usr/lib/locale/C.UTF-8/LC_NUMERIC (path dev=0,61)
+bash    213     root  mem    REG               0,40              1689 /usr/lib/locale/C.UTF-8/LC_TIME (path dev=0,61)
+bash    213     root  mem    REG               0,40              1678 /usr/lib/locale/C.UTF-8/LC_COLLATE (path dev=0,61)
+bash    213     root  mem    REG               0,40              1684 /usr/lib/locale/C.UTF-8/LC_MONETARY (path dev=0,61)
+bash    213     root  mem    REG               0,40              1683 /usr/lib/locale/C.UTF-8/LC_MESSAGES/SYS_LC_MESSAGES (path dev=0,61)
+bash    213     root  mem    REG               0,40              1687 /usr/lib/locale/C.UTF-8/LC_PAPER (path dev=0,61)
+bash    213     root  mem    REG               0,40              1685 /usr/lib/locale/C.UTF-8/LC_NAME (path dev=0,61)
+bash    213     root  mem    REG               0,40              1996 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache (path dev=0,61)
+bash    213     root  mem    REG               0,40              1677 /usr/lib/locale/C.UTF-8/LC_ADDRESS (path dev=0,61)
+bash    213     root  mem    REG               0,40              1688 /usr/lib/locale/C.UTF-8/LC_TELEPHONE (path dev=0,61)
+bash    213     root  mem    REG               0,40              1681 /usr/lib/locale/C.UTF-8/LC_MEASUREMENT (path dev=0,61)
+bash    213     root  mem    REG               0,40              1680 /usr/lib/locale/C.UTF-8/LC_IDENTIFICATION (path dev=0,61)
+bash    213     root    0u   CHR              136,0       0t0       3 /dev/pts/0
+bash    213     root    1u   CHR              136,0       0t0       3 /dev/pts/0
+bash    213     root    2u   CHR              136,0       0t0       3 /dev/pts/0
+bash    213     root  255u   CHR              136,0       0t0       3 /dev/pts/0
+lsof    287     root  cwd    DIR               0,61       168     256 /
+lsof    287     root  rtd    DIR               0,61       168     256 /
+lsof    287     root  txt    REG               0,61    163192   18083 /usr/bin/lsof
+lsof    287     root  mem    REG               0,40             18083 /usr/bin/lsof (path dev=0,61)
+lsof    287     root  mem    REG               0,40              1148 /lib/x86_64-linux-gnu/libc-2.19.so (path dev=0,61)
+lsof    287     root  mem    REG               0,40              1130 /lib/x86_64-linux-gnu/ld-2.19.so (path dev=0,61)
+lsof    287     root  mem    REG               0,40              1996 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache (path dev=0,61)
+lsof    287     root  mem    REG               0,40              1679 /usr/lib/locale/C.UTF-8/LC_CTYPE (path dev=0,61)
+lsof    287     root    0u   CHR              136,0       0t0       3 /dev/pts/0
+lsof    287     root    1u   CHR              136,0       0t0       3 /dev/pts/0
+lsof    287     root    2u   CHR              136,0       0t0       3 /dev/pts/0
+lsof    287     root    3r   DIR               0,64         0       1 /proc
+lsof    287     root    4r   DIR               0,64         0 1700906 /proc/287/fd
+lsof    287     root    5w  FIFO               0,12       0t0  957205 pipe
+lsof    287     root    6r  FIFO               0,12       0t0  957206 pipe
+lsof    288     root  cwd    DIR               0,61       168     256 /
+lsof    288     root  rtd    DIR               0,61       168     256 /
+lsof    288     root  txt    REG               0,61    163192   18083 /usr/bin/lsof
+lsof    288     root  mem    REG               0,40             18083 /usr/bin/lsof (path dev=0,61)
+lsof    288     root  mem    REG               0,40              1148 /lib/x86_64-linux-gnu/libc-2.19.so (path dev=0,61)
+lsof    288     root  mem    REG               0,40              1130 /lib/x86_64-linux-gnu/ld-2.19.so (path dev=0,61)
+lsof    288     root  mem    REG               0,40              1996 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache (path dev=0,61)
+lsof    288     root  mem    REG               0,40              1679 /usr/lib/locale/C.UTF-8/LC_CTYPE (path dev=0,61)
+lsof    288     root    4r  FIFO               0,12       0t0  957205 pipe
+lsof    288     root    7w  FIFO               0,12       0t0  957206 pipe
+--END--
+
+
+# -----------------------------------------------------
+# Count of open descriptors exceeds hard limit ?
+#[user@virtual]
+
+    docker exec -it stevedore_emily_1 bash
+
+        ulimit -Hn
+
+        >   1048576
+
+        lsof | wc -l
+
+        >   1100145
+
+
+
+
+
+
